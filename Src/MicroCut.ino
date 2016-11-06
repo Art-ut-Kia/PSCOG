@@ -1,6 +1,6 @@
 /*
- * MicroCut.ino : power supply interruption generator
- * autor : JPP
+ * MicroCut.ino : power supply interruptions generator
+ * author : JPP
  * V1.00 dated 06/11/2016
  */
 
