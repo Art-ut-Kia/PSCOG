@@ -15,21 +15,21 @@ void setup() {
 }
 
 void loop() {
-  // waits for "Cut" button release
+  // wait for "Cut" button release
   while(digitalRead(buttonPin) == LOW);
   
-  // waits for "Cut" button press
+  // wait for "Cut" button press
   while(digitalRead(buttonPin) == HIGH);
   
-  // reads poty position
+  // read poty position
   int potyPos = analogRead(potyPin);
   
-  // scales [0..1023] to [20000..50000] (20 to 50ms)
+  // scale [0..1023] to [20000..50000] (20 to 50ms)
   long int microSeconds = 29.3255 * potyPos + 20000.5;
   
   // pulse the relay for the required duration
   digitalWrite(relayPin, HIGH);
-  delayMicroseconds(microSeconds - 5000); // removes 5ms for relay delay
+  delayMicroseconds(microSeconds - 5000); // remove 5ms for relay delay
   digitalWrite(relayPin, LOW);
   
   // trace message to serial port
