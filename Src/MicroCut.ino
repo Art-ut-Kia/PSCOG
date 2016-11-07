@@ -32,7 +32,7 @@ void loop() {
   delayMicroseconds(microSeconds - 5000); // remove 5ms for relay delay
   digitalWrite(relayPin, LOW);
   
-  // trace message to serial port
+  // send trace message to serial port
   Serial.print(0.001 * microSeconds);
   Serial.println(" ms");
   
