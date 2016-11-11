@@ -6,7 +6,7 @@
 
 int buttonPin = 13; // "Cut" button
 int relayPin = A0;
-int potyPin = A1;
+int potPin = A1;
 
 void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
@@ -21,11 +21,11 @@ void loop() {
   // wait for "Cut" button press
   while(digitalRead(buttonPin) == HIGH);
   
-  // read poty position
-  int potyPos = analogRead(potyPin);
+  // read pot position
+  int potPos = analogRead(potPin);
   
   // scale [0..1023] to [20000..50000] (20 to 50ms)
-  long int microSeconds = 29.3255 * potyPos + 20000.5;
+  long int microSeconds = 29.3255 * potPos + 20000.5;
   
   // pulse the relay for the required duration
   digitalWrite(relayPin, HIGH);
